@@ -11,6 +11,20 @@ st.set_page_config(layout='wide',
 x=pd.read_csv('Super Store Analysis Modified')
 df=pd.DataFrame(x)
 
+st.markdown(
+    """
+    <style>
+    .centered-title {
+        text-align: center;
+        font-size: 60px;  # Adjust the size as needed
+        color: purple;
+        font-weight: bold;
+    }
+    </style>
+    <h1 class="centered-title">Store Overview Sales</h1>
+    """, unsafe_allow_html=True
+)
+
 col1, col2, col3, col4, col5, col6=st.columns(6)
 
 col1.metric(label='Total Sales', value=f"{int(df['Sales'].sum()):,}")
